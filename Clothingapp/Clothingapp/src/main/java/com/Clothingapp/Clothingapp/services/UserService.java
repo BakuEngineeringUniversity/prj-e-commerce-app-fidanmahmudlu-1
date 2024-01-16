@@ -1,20 +1,17 @@
 package com.Clothingapp.Clothingapp.services;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import java.util.List;
+
 import com.Clothingapp.Clothingapp.entity.User;
 import com.Clothingapp.Clothingapp.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 @Service
 public class UserService {
-
-    private final UserRepository userRepository;
-
     @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private UserRepository userRepository;
 
     public User createUser(User user) {
         return userRepository.save(user);
@@ -24,11 +21,11 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public User updateUser(User user) {
-        return userRepository.save(user);
+    public User updateUser(User user1) {
+        return userRepository.save(user1);
     }
 
-    public List<User> getAllUsers() {
+    public List<User> getAllUser() {
         return userRepository.findAll();
     }
 

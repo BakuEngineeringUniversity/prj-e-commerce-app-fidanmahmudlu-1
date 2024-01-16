@@ -2,6 +2,7 @@ package com.Clothingapp.Clothingapp.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
 @Entity
 @Data
 @Table(name = "users")
@@ -12,9 +13,6 @@ public class User {
     private Long id;
 
     private String name;
-    private String surname;
     private String email;
-    private String password;
-
 
 }
